@@ -39,8 +39,3 @@ htmlcov/
 build/
 dist/
 *.egg-info/
-
-# Local input/output files
-input/*
-!input/README.md
-output/
