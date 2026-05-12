@@ -1,0 +1,1 @@
+Drop .HEIC files here, then run the script.
