@@ -18,14 +18,14 @@ def convert_heic_folder(input_dir: Path) -> None:
         if path.is_file() and path.suffix.lower() == ".heic":
             heic_files.append(path)
 
-    if not heic_files:
+    if not heic_files: # if len(heic_files) == 0:
         print("No HEIC files found.")
         return
 
     for heic_path in heic_files:
         print(f"🔄 Converting {heic_path.name}...")
 
-        png_path = heic_path.with_suffix(".png")
+        png_path = heic_path.with_suffix(".png") # path/to/file.heic -> path/to/file.png
         heif_file = pillow_heif.read_heif(heic_path)
 
         image = Image.frombytes(
@@ -45,7 +45,7 @@ def convert_heic_folder(input_dir: Path) -> None:
     print("✅ Done")
 
 
-def main() -> None:
+def main():
     parser = ArgumentParser(
         description="Convert HEIC files in a folder to PNG and remove the originals."
     )
